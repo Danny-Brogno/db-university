@@ -18,6 +18,12 @@ name: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
 description: TEXT ; NOT NULLABLE
 rating: TINYINT ; DEFAULT(0)
 virtual_class_room_or_not: VARCHAR(64) ; NULLABLE
+tutors_info: TEXT ; NOT NULLABLE
+library_info: TEXT ; NOT NULLABLE
+PC_classroom(aula informatica): TEXT ; NOT NULLABLE
+where_to_study(aula studio): TEXT ; NOT NULLABLE
+laboratory_info: TEXT ; NOT NULLABLE
+erasmus_info: TEXT ; NOT NULLABLE
 
 --------------------------------------------------------------------------------
 - Corso
@@ -26,6 +32,7 @@ virtual_class_room_or_not: VARCHAR(64) ; NULLABLE
 name: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
 description: TEXT ; NOT NULLABLE
 rating: TINYINT ; DEFAULT(0)
+first_&_second_level_Master_info: TEXT ; NOT NULLABLE
 
 --------------------------------------------------------------------------------
 - Insegnante
