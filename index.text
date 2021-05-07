@@ -1,0 +1,99 @@
+Università
+--------------------------------------------------------------------------------
+
+- Dipartimento:
+
+name: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+address: VARCHAR(128) ; NOT NULLABLE
+establishment: DATE ; NOT NULLABLE
+telephone_number: VARCHAR(32) ; NULLABLE
+department_ID: INT ; NOT NULLABLE
+description: TEXT ; NOT NULLABLE
+rating: TINYINT ; DEFAULT(0)
+
+--------------------------------------------------------------------------------
+- Corso di laurea
+
+name: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+description: TEXT ; NOT NULLABLE
+rating: TINYINT ; DEFAULT(0)
+virtual_class_room_or_not: VARCHAR(64) ; NULLABLE
+
+--------------------------------------------------------------------------------
+- Corso
+
+virtual_class_room_or_not: VARCHAR(64) ; NULLABLE
+name: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+description: TEXT ; NOT NULLABLE
+rating: TINYINT ; DEFAULT(0)
+
+--------------------------------------------------------------------------------
+- Insegnante
+
+title(Mr, Miss, Dr): VARCHAR(128) ; NOT NULLABLE
+username: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+password: VARCHAR(64) ; NOT NULLABLE
+email: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+name: VARCHAR(64) ; NOT NULLABLE
+lastname: VARCHAR(64) ; NOT NULLABLE
+personal_ID: VARCHAR(32) ; NOT NULLABLE
+address: VARCHAR ; NOT NULLABLE
+personal_telephone_number: VARCHAR(32) ; NULLABLE
+office_telephone_number: VARCHAR(32); NOT NULLABLE
+cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+DOB: DATE ; NOT NULLABLE
+birth_place: VARCHAR(64) ; NOT NULLABLE
+genre: VARCHAR(16) ; NULLABLE
+date_hiring: DATE ; NOT NULLABLE
+schedule: VARCHAR(128) ; NULLABLE
+type_of_job: VARCHAR(32) ; NOT NULLABLE
+salary: INT ; NOT NULLABLE
+kind_of_contract: VARCHAR(64) ; NOT NULLABLE
+office_location: VARCHAR(128) ; NOT NULLABLE
+
+
+--------------------------------------------------------------------------------
+- Appello
+
+quantity: INT ; DEFAULT(0)
+name_of_exam: VARCHAR(128) ; NOT NULLABLE
+exam_ID: VARCHAR(32) ; NOT NULLABLE
+cathegory: VARCHAR(128) ; NOT NULLABLE
+date_&_time: DATE ; NOT NULLABLE
+where_is_gonna_take_place: VARCHAR(128) ; NULLABLE
+description: TEXT ; NOT NULLABLE
+CFU: INT ; NOT NULLABLE
+max_booking(numero massimi prenotati al giorno): INT ; NOT NULLABLE
+special_requirements(riduzione del materiale o posti per disabili): VARCHAR(128) ; NULLABLE
+different_material(materiale frequentanti o non frequentanti dei corsi): VARCHAR(128) ; NOT NULLABLE
+
+
+
+--------------------------------------------------------------------------------
+- Studente
+
+title(Mr, Miss): VARCHAR(128) ; NOT NULLABLE
+student_ID(numero di matricola): INT ; NOT NULLABLE; UNIQUE
+username: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+password: VARCHAR(64) ; NOT NULLABLE
+email: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+name: VARCHAR(64) ; NOT NULLABLE
+lastname: VARCHAR(64) ; NOT NULLABLE
+address: VARCHAR ; NOT NULLABLE
+personal_telephone_number: VARCHAR(32) ; NULLABLE
+cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+DOB: DATE ; NOT NULLABLE
+birth_place: VARCHAR(64) ; NOT NULLABLE
+picture(da mettere sul libretto universitario): VARCHAR ; NOT NULLABLE
+
+--------------------------------------------------------------------------------
+- Esito
+
+exam_ID: VARCHAR(32) ; NOT NULLABLE
+name_of_exam: VARCHAR(128) ; NOT NULLABLE
+student_code(deve essere uguale a quello in appello): VARCHAR(32) ; NOT NULLABLE
+cathegory(se è in 0/30 o 0/10 o pass/fail): VARCHAR(128) ; NOT NULLABLE
+temporary_mark(per esami divisi in più parti): INT ; NOT NULLABLE
+final_mark: INT ; NOT NULLABLE
+
+--------------------------------------------------------------------------------
